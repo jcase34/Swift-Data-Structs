@@ -9,7 +9,7 @@ Elementary Data Structures:
   <li>LinkedLists</li>
 </ul>
 
-Tree Data Structures:
+Tree/Graph Data Structures:
 <ul>
   <li>Trees</li>
   <li>Binary Trees</li>
@@ -18,11 +18,7 @@ Tree Data Structures:
   <li>Tries</li>
   <li>Heaps</li>
   <li>Priority Queue</li>
-</ul>
-
-Tree Data Structures:
-<ul>
   <li>Graphs</li>
 </ul>
-  
+
   
