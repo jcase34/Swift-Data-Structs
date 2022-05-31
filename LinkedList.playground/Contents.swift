@@ -148,18 +148,15 @@ extension LinkedList: CustomStringConvertible {
 
 var list = LinkedList<Int>()
 list.push(3)
-list.append(5)
-list.push(7)
-list.push(9)
 list.push(2)
+list.push(1)
 print("List before inserting items: \(list)")
 
-var middleNode = list.node(at: 2)!
+var middleNode = list.node(at: 1)!
 print("Middle node is : \(middleNode)")
 
-for _ in 1...4 {
-    middleNode = list.insert(-1, after: middleNode)
-}
+list.insert(8, after: middleNode)
+print(list)
 
 print("after insertion list is: \(list)")
 

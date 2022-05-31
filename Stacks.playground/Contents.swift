@@ -11,12 +11,16 @@ public struct Stack<T> {
         storage.append(element)
     }
     //Pop last item appended O(1)
-    public mutating func pop(_ element: T) {
+    public mutating func pop() -> T? {
         storage.popLast()
     }
     //Look at top element (last added) O(1)
     public func peek() -> T? {
         storage.last
+    }
+    
+    public func isEmpty() -> Bool {
+        peek() == nil
     }
     
 }
@@ -37,9 +41,9 @@ var a = [0,1,3]
 var s = Stack(a)
 s.push(5)
 print(s)
-s.pop(5)
+s.pop()
+print(s.isEmpty())
 print(s)
-print(s.peek()!)
 
 //aStack based on typical array collection from Swift.
 var aStack: [Int] = []
