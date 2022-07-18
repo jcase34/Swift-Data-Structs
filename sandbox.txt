@@ -1,0 +1,101 @@
+//Linked List implementation
+//1.) Define Node object
+
+//Node object
+public class Node<Value> {
+  //Node will have a value that is of type value
+  var value: value
+
+  //Var will contain a reference to another node, so optional type
+  var next: Node?
+
+  //initializer
+  public init(value: Value, next: Node?) {
+    self.value = value
+    self.next = next
+  }
+}
+
+//LinkList Structure to be passed around
+public struct LinkedList<Value> {
+  //two propertires, a head and a tail for the linked list,
+  //optionals of type Node
+  var head: Node?
+  var tail: Node?
+
+  //default init for the struct
+  public init() {}
+
+  //empty checker
+  public var isEmpty: Bool {
+    head == nil
+  }
+
+  //Now add functions that push, append, and insert at within the LinkedList
+  public mutating func push(_ value: Value) {
+    head = Node(value: value, next: head)
+    //create new node, assign it's next
+    //property to current head
+
+    //if there is no tail, then list is empty and head = tail
+    if tail == nil {
+      tail = head
+    }
+  }
+
+  public mutating func append(_ value: value) {
+    guard !isEmpty {
+      //if empty, do a push operation
+      push(value) // pushes new value to front, tail = head
+    }
+    //if >= 1 nodes exist, take current tail Node, assign it to new Value
+    tail!.next = Node(value: value)
+
+    //re-assign tail of LinkedList to be whatever is next
+    tail = tail!.next
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Stack Data Structure
+//Needs storage compartment
+//Needs an initializer, will leave blank
+
+public struct Stack<T> {
+  var storage: [T] = []
+  public init() {}
+
+  public mutating func push(_ element: T) {
+    //push element onto the Stack
+    storage.append(element)
+  }
+
+  public mutating func pop() -> T? {
+    //pop last item off storage compartment
+    //may be nil, return it if available
+    storage.poplast()
+  }
+
+  public func peek() -> T? {
+    //optional, b/c it may return nil if empty
+    storage.last
+  }
+
+  public func isEmpty() -> Bool {
+    //look at last element, so does peak return nil?
+    peek() == nil
+  }
+
+}
